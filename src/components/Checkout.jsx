@@ -61,13 +61,16 @@ export default function Checkout() {
 
   let actions = (
     <>
-      <Button type="button" textOnly onClick={handleClose}>
-        Close
-      </Button>
       <Button textOnly={handleSubmit}>Submit Order</Button>
     </>
   );
-
+  let action1 = (
+    <>
+      <Button type="button" textOnly onClick={handleClose}>
+        Close
+      </Button>
+    </>
+  )
   if (isSending) {
     actions = <span>Sending order data...</span>;
   }
@@ -96,6 +99,7 @@ export default function Checkout() {
   return (
     <Modal open={userProgressCtx.progress === 'checkout'} onClose={handleClose}>
       <form onSubmit={handleSubmit}>
+      <p className="modal-actions">{actions}</p>
         <h2>Checkout</h2>
         <p>Total Amount: {currencyFormatter.format(cartTotal)}</p>
 
@@ -109,7 +113,7 @@ export default function Checkout() {
 
         {error && <Error title="Failed to submit order" message={error} />}
 
-        <p className="modal-actions">{actions}</p>
+        <p className="modal-actions">{action1}</p>
       </form>
     </Modal>
   );
