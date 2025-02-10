@@ -9,7 +9,8 @@ body {
   font-family: 'Raleway', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(#29251c, #2c2306);
+  /* background: linear-gradient(#29251c, hsl(123, 86%, 51%)); */
+  background: #ffab04;
   color: #d9e2f1;
   min-height: 100vh;
 }
@@ -124,13 +125,18 @@ h1 {
 }
 
 .modal-actions .text-button {
-  color: #1d1a16;
+  color: #1d1816;
 }
 
 .modal-actions .text-button:hover,
 .modal-actions .text-button:active {
-  color: #312c1d;
+  background-color: crimson;
+  color: #2d10ea;
 }
+
+/* .violation{
+  background-color: #6d0b0b;
+} */
 
 .cart-total {
   display: flex;

@@ -64,7 +64,7 @@ export default function Checkout() {
       <Button type="button" textOnly onClick={handleClose}>
         Close
       </Button>
-      <Button>Submit Order</Button>
+      <Button textOnly={handleSubmit}>Submit Order</Button>
     </>
   );
 
@@ -78,15 +78,17 @@ export default function Checkout() {
         open={userProgressCtx.progress === 'checkout'}
         onClose={handleFinish}
       >
-        <h2>Success!</h2>
-        <p>Your order was submitted successfully.</p>
-        <p>
-          We will get back to you with more details via email within the next
-          few minutes.
-        </p>
-        <p className="modal-actions">
-          <Button onClick={handleFinish}>Okay</Button>
-        </p>
+        <div className='violation'>
+          <h2 class = 'red-text' color = 'red'>Success!</h2>
+          <p>Your order was submitted successfully.</p>
+          <p>
+            We will get back to you with more details via email within the next
+            few minutes.
+          </p>
+          <p className="modal-actions">
+            <Button onClick={handleFinish}>Okay</Button>
+          </p>
+        </div>
       </Modal>
     );
   }
